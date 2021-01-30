@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_riva.mk
+    $(LOCAL_DIR)/superior_riva.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_riva-user \
-    aosp_riva-userdebug \
-    aosp_riva-eng
+    superior_riva-user \
+    superior_riva-userdebug \
+    superior_riva-eng
