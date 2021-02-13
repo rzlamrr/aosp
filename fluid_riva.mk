@@ -22,9 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Inherit some common AOSP stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 720
+TARGET_GAPPS_ARCH := arm64
+
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.fluid.maintainer=hikarinochikara \
+  ro.fluid.cpu=SD425
 
 # Inherit from riva device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -33,7 +36,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := riva
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi 5A
-PRODUCT_NAME := aosp_riva
+PRODUCT_NAME := fluid_riva
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -44,4 +47,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="riva" \
     PRIVATE_BUILD_DESC="riva-user 7.1.2 N2G47H V9.5.6.0.NCKMIFA release-keys"
 
-BUILD_FINGERPRINT := google/coral/coral:11/RP1A.201005.004/6782484:user/release-keys
+BUILD_FINGERPRINT := xiaomi/riva/riva:7.1.2/N2G47H/V9.5.6.0.NCKMIFA:user/release-keys
