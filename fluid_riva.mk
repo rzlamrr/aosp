@@ -23,11 +23,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 # Inherit some common AOSP stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 720
-TARGET_GAPPS_ARCH := arm64
 
-PRODUCT_PRODUCT_PROPERTIES += \
-  ro.fluid.maintainer=hikarinochikara \
-  ro.fluid.cpu=SD425
+# Gapps flags
+TARGET_INCLUDE_GAPPS := false
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := false
 
 # Inherit from riva device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -47,4 +47,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="riva" \
     PRIVATE_BUILD_DESC="riva-user 7.1.2 N2G47H V9.5.6.0.NCKMIFA release-keys"
 
-BUILD_FINGERPRINT := xiaomi/riva/riva:7.1.2/N2G47H/V9.5.6.0.NCKMIFA:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/riva/riva:7.1.2/N2G47H/V9.5.6.0.NCKMIFA:user/release-keys
